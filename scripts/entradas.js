@@ -7,7 +7,6 @@ async function buscarDados(){
         
         const res = await fetch(geradorNome());
         data = await res.json();
-        console.log(data);
         if(data.Error){
             notie.alert({text: "Filme não encontrado",
                 type: 'error',
@@ -31,7 +30,6 @@ function geradorNome(){
     const nome = document.getElementById("nome").value.trim();
     const ano = document.getElementById("ano").value.trim();
     let  URLapi;
-    console.log(nome);
     if(nome === "" || nome === null){
         throw new Error("O nome do filme deve ser informado!");
     }
