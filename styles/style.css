@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--primary);
+    font-family: "Montserrat", sans-serif;
+    color: var(--color-font);
+    font-size: 1.8rem;
+    height: 100dvh;
+}
+
+:root{
+    --primary: #abaeff;
+    --secudary: #28282d;
+    --color-font: #dcdcde;
+}
+
+
+header{
+    
+    background-color: var(--secudary);
+    padding: 2rem;
+
+    & h1  
+    {
+        text-transform: capitalize;
+        font-size: 2rem;
+        color: var(--primary);
+    }
+
+
+    & .main-flex
+    {
+        display: flex;
+        flex-flow: row wrap;
+        row-gap: 3rem;
+        justify-content: space-between;
+        align-items: center;
+
+        & .title-flex 
+        {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            & .bi-film
+            {
+                color: var(--primary);
+                font-size: 2rem;
+            }
+        }
+        & .container-flex
+        {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 2rem;
+            align-items: center;
+            
+            & div{
+                & label{
+                    margin-right: 0.5rem;
+                }
+                & input{
+                    border-radius: 5px;
+                    border: none;
+                    width: 23.0rem;
+                    height: 2rem;
+                    background-color: #ffffff96;
+                    font-size: 1.5rem;
+                    padding: 10px;
+                    font-family: 'Montserrat', sans-serif;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    &.input-ano{
+                        width: 7rem;
+                    }
+                }
+
+                & button{
+                    width: 3rem;
+                    height: 3rem;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    border: 2px solid var(--primary);
+                    border-radius: 5px;
+                    background-color: transparent;
+                    color: #abaeff;
+                    cursor: pointer;
+
+                    &:hover{
+                        color: var(--primary);
+                        background-color: #222469;
+                        border: 1px solid var(--primary);
+                    }
+
+                }
+            }
+        }
+    }
+   
+}
+
+main{
+    & .lista-filmes{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 3rem;
+
+        & .alinhar-divs{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: 0.5rem;
+
+            & .img_add{
+                height: 30rem;
+                width: 20rem;
+                border-radius: 9px;
+                &:hover{
+                    cursor: pointer;
+                    /* transform: scale(1.1); Aumenta o tamanho olhar aqui */
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* olhar depois */
+                }
+                & img{
+                    border-radius: 9px;
+                    width: 100%;
+                    height: 100%;
+                    filter: brightness(90%) contrast(90%);
+                }
+            }
+            & div:last-child{
+                width: 100%;
+                
+                & button{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: var(--secudary);
+                    color: #abaeff;
+                    border: 1px solid var(--color-font);
+                    border-radius: 4px;
+                    width: 100%;
+                    height: 3.5vh;
+                    font-size: 1.5rem;
+                    padding: 1.5rem;
+
+                    &:hover{
+                        color: var(--primary);
+                        background-color: #222469;
+                        border: 1px solid var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #28282d8d;
+    margin-top: 1.5rem;
+    height: 7rem;
+    position: fixed;
+    bottom: 0;
+
+    & a{
+        color: var(--primary);
+        font-style: italic;
+        text-transform: capitalize;
+    }
+}
