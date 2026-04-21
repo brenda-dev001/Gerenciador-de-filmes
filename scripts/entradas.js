@@ -1,5 +1,4 @@
-const BotaoBuscar = document.getElementById("BotaoBuscar");
-import { selecionarModal, criarModal } from "./modal.js";
+import { criarModal } from "./modal.js";
 export let data;
 
 async function buscarDados(){
@@ -12,7 +11,7 @@ async function buscarDados(){
                 type: 'error',
             });
         }else{
-            selecionarModal[0].classList.remove("esconderModal");
+            $(".info-filme").removeClass("esconderModal");
         }
         criarModal(data);
         nome.value = "";
@@ -27,8 +26,9 @@ async function buscarDados(){
 }
 
 function geradorNome(){
-    const nome = document.getElementById("nome").value.trim();
-    const ano = document.getElementById("ano").value.trim();
+    const nome = $("#nome").val().trim();
+    const ano = $("#ano").val().trim();
+  
     let  URLapi;
     if(nome === "" || nome === null){
         throw new Error("O nome do filme deve ser informado!");
@@ -39,7 +39,7 @@ function geradorNome(){
     }else{
         if(ano.length !== 4 || isNaN(Number(ano))){
             throw new Error("O ano deve ser números e conter 4 digitos");
-          
+            
         }else{
             URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${NovoNome}&y=${ano}`;
         }
@@ -48,4 +48,4 @@ function geradorNome(){
     return URLapi;
 }
 
-BotaoBuscar.addEventListener("click", buscarDados);
+$("#BotaoBuscar").click(buscarDados);
