@@ -1,14 +1,14 @@
-$("#fechar-div").click(function(){
-    $(".info-filme").addClass("puxarModal");
-    $(".info-filme").addClass("esconderModal");
+$("#fechar_div").click(function(){
+    $(".info_filme").addClass("puxar_modal");
+    $(".info_filme").addClass("esconder_modal");
 });
 
 export function criarModal(data){
-    $("#nome-filme").text(data.Title);  
-    $("#mudarIMG").attr("src", data.Poster);  
-    $(".resumo-filme").text(data.Plot);   
-    $("#elenco-filme").text(data.Actors);  
-    $("#genero-filme").text(data.Genre);
+    $("#nome_filme").text(data.Title);  
+    $("#mudar_img").attr("src", data.Poster);  
+    $(".resumo_filme").text(data.Plot);   
+    $("#elenco_filme").text(data.Actors);  
+    $("#genero_filme").text(data.Genre);
   
 }
 

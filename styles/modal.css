@@ -18,7 +18,7 @@ main{
         
     }
 
-    & .esconderModal{
+    & .esconder_modal{
         visibility: hidden;
     }
 
@@ -27,12 +27,12 @@ main{
         flex-flow: column;
         align-items: center;
 
-        & .puxarModal{
+        & .puxar_modal{
             transform: translatey(-100%);
             transition: all 0.10s ease-in 0s;
         }
 
-        & .info-filme
+        & .info_filme
         {
             width: 50%;
             margin: 1rem auto;
@@ -45,7 +45,7 @@ main{
             position: absolute;
             top: 11rem;
 
-            & #organizar-titulo
+            & #organizar_titulo
             {
                 display: flex;
                 flex-flow: row nowrap;
@@ -72,13 +72,13 @@ main{
                 }
             }
 
-            & #nome-filme
+            & #nome_filme
             {
                 text-align: justify;
                 color: var(--primary);
                 text-transform: capitalize;
             }
-            & .container-filme
+            & .container_filme
             {
                 display: flex;
                 flex-flow: row wrap;
@@ -86,7 +86,7 @@ main{
                 height: 50dvh;
                 
                 
-                & #img-filme{
+                & #img_filme{
                     display: flex;
                     flex: 1 0 10rem; 
                     align-items: center;
@@ -96,14 +96,14 @@ main{
                     border-radius: 9px;
                     
 
-                    & #mudarIMG{
+                    & #mudar_img{
                         width: 100%;
                         height: auto;
                         border-radius: 9px;
                     }
                 }
 
-                & .container-filho{
+                & .container_filho{
                     display: flex;
                     flex-flow: column nowrap;
                     flex: 1 1 30rem;
@@ -125,7 +125,7 @@ main{
                 }
             }
 
-            & #addFilme{
+            & #add_filme{
                 border: none;
                 border-radius: 7px;
                 text-align: center;

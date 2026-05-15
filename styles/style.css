@@ -37,8 +37,11 @@ header{
         color: var(--primary);
     }
 
+    .esconder{
+        display: none;
+    }
 
-    & .main-flex
+    & .main_flex
     {
         display: flex;
         flex-flow: row wrap;
@@ -46,7 +49,7 @@ header{
         justify-content: space-between;
         align-items: center;
 
-        & .title-flex 
+        & .title_flex 
         {
             display: flex;
             gap: 1rem;
@@ -57,7 +60,7 @@ header{
                 font-size: 2rem;
             }
         }
-        & .container-flex
+        & .container_flex
         {
             display: flex;
             flex-flow: row nowrap;
@@ -71,18 +74,20 @@ header{
                 & input{
                     border-radius: 5px;
                     border: none;
-                    width: 23.0rem;
-                    height: 2rem;
-                    background-color: #ffffff96;
+                    width: 19rem;
+                    height: 2.5rem;
+                    background-color: #e4dada1c;
                     font-size: 1.5rem;
                     padding: 10px;
                     font-family: 'Montserrat', sans-serif;
+                    color: #abaeff;
 
                     &:hover{
                         cursor: pointer;
                     }
-                    &.input-ano{
-                        width: 7rem;
+
+                    &.input_ano{
+                        width: 6rem;
                     }
                 }
 
@@ -111,13 +116,15 @@ header{
 }
 
 main{
-    & .lista-filmes{
+    & .lista_filmes{
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
+        align-items: center;
         gap: 3rem;
+        padding: 1rem;
 
-        & .alinhar-divs{
+        & .alinhar_divs{
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
@@ -175,7 +182,7 @@ footer{
     background-color: #28282d8d;
     margin-top: 1.5rem;
     height: 7rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
 
     & a{

@@ -1,79 +1,80 @@
 import { data } from "./entradas.js";
 
-//Cria estrutura para a lista de filmes adicionados
+//Cria estrutura para a lista de filmes adicionados.
 
-const criaDivs = function(){
-    const criaDiv = $("<div></div>");
-    const criaDivImg = $("<div></div>");
-    const criaDivBtn = $("<div></div>");
-    const criaBtn = $("<button></button>");
-    const criaSection = $("<section></section>");
+function criaDivs(data){
     
+    const elemento = $(
+        `<section>
+            <div class="alinhar_divs">
+                <div class="img_add">
+                    <img src="${data.Poster}" alt="imagem do filme ${data.Title}">
+                </div>
+                <div>
+                    <button class="remover">Remover<i class="bi-trash"></i></button>
+                </div>
+            </div>
+        </section>`);
 
-   
-    $(".lista-filmes").append(criaSection);
-    $(".lista-filmes section").append(criaDiv);
-    $(".lista-filmes section div").append(criaDivImg).addClass("img_add");
-    $(".lista-filmes section div").after(criaDivBtn);
-    $(".lista-filmes section div").append(criaBtn).addClass("remover");   
-    //$(".lista-filmes section div button").html(`<i class=bi-trash>Remover</i>`);
-
-    //OLHAR DEPOISSS
-    
-
-    
-    // selecionarArticle[selecionarArticle.length - 1].appendChild(criaSection);
-    
-    // criaSection.appendChild(criaDiv).classList.add("alinhar-divs");
-    // criaDiv.appendChild(criaDivImg).classList.add("img_add");
-    // criaDiv.appendChild(criaDivBtn);
-    // criaDivBtn.appendChild(criaBtn).classList.add("remover");
-    // criaBtn.innerHTML = `Remover<i class=bi-trash></i>`;
-    
+    $(".lista_filmes").append(elemento);
 }
 
-//Adiciona o filme na lista de filmes adicionados
-
-$("#addFilme").click(function(){
-    criaDivs();
-    AddImg(data);
-    $(".info-filme").addClass("esconderModal");
-});
-
-//cria e retorna objeto com informações do filme adicionado
+//cria e retorna objeto com informações do filme adicionado.
 
 function retornaObjeto(nomeFilme, linkImagem){
     const obj = {  
         Titulo: nomeFilme,
         Poster: linkImagem,
-    }
-    return obj;
-}
-
-//Adicionar filme na lista
-let listaFilmes = [];
-
-function addNaLista(objeto){
-    for(let i = 0; i < listaFilmes[listaFilmes.length]; i++){
-        if(objeto === listaFilmes[i]){
-            notie.alert({text: "Esse filme ja foi adicionado",
-            type: 'error',
-            time: 1.5,
-            });
-        }else{
-            listaFilmes.push(retornaObjeto);
-            return listaFilmes;
+        getTitulo: function(){
+            return this.Titulo;
+        },
+        
+        getLinkImagem: function(){
+            return this.Poster;
         }
     }
+    return obj;
+    
 }
 
-//Adiciona imagem do filme na estrutura div criada na lista
+let listaFilmes = [];
 
-function AddImg(data){
-    const selecionarDiv = document.getElementsByClassName("img_add");
-    selecionarDiv[selecionarDiv.length - 1].innerHTML = `<img src="${data.Poster}" alt="imagem do filme ${data.Title}">`;
-    addNaLista(retornaObjeto(data.Title, data.Poster));
+//Adiciona objeto com filme na lista de filmes.
+
+function addNaLista(listaFilmes){
+    const objeto = retornaObjeto(data.Title, data.Poster);
+    listaFilmes.push(objeto);
+    criaDivs(data);
+    $(".info_filme").addClass("esconder_modal");
 }
+
+//Verifica se o filme existe na lista.
+
+function existeNaLista(listaFilmes, tituloFilme){
+
+    for(let i = 0; i < listaFilmes.length; i++){
+        if(listaFilmes[i].getTitulo() === tituloFilme) return true;
+    }
+    return false;
+}
+
+//Realiza verificações finais e adiciona o filme na lista.
+
+$("#add_filme").click(function(){
+    
+    if(existeNaLista(listaFilmes, data.Title)){
+        notie.alert({text: "Esse filme já foi adicionado em sua lista.",
+            type: 'error',
+            time: 1.6,
+        });
+    }else{
+        addNaLista(listaFilmes);
+        notie.alert({text: "Filme adicionado em sua lista com sucesso!",
+            type: "success",
+            time: 1.7,
+        });
+    }
+});
 
 //inteligencia de remover o filme da lista de filmes
 

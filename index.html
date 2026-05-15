@@ -1,45 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/modal.css">
-    <link rel="stylesheet" href="https://unpkg.com/notie/dist/notie.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/modal.css" />
+    <link rel="stylesheet" href="https://unpkg.com/notie/dist/notie.min.css" />
     <title>Lista de filmes</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="main-flex">
-            <div class="title-flex">
-                <div><i class="bi bi-film"></i></div>
-                <div>
-                    <h1>my movies</h1>
-                </div>
-            </div>
-            <nav>
-                <div class="container-flex">
-                    <div>
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome">
-                    </div>
-                    <div>
-                        <label for="ano">Ano</label>
-                        <input type="text" id="ano" class="input-ano">
-                    </div>
-                    <div>
-                        <button id="BotaoBuscar"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </nav>
+      <div class="main_flex">
+        <div class="title_flex">
+          <div><i class="bi bi-film"></i></div>
+          <div>
+            <h1>my movies</h1>
+          </div>
         </div>
+        <nav>
+          <div class="container_flex">
+            <div>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" />
+            </div>
+            <div>
+              <label for="ano">Ano</label>
+              <input type="text" id="ano" class="input_ano" />
+            </div>
+            <div>
+              <button id="botao_buscar"><i class="bi bi-search"></i></button>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
     <main>
-        <h2>Comece agora sua lista de filmes!</h2>
-        <article class="lista-filmes">
-            <!-- <section>
-                <div class="alinhar-divs">
+      <h2>Comece agora sua lista de filmes!</h2>
+      <article class="lista_filmes">
+        <!-- <section>
+                <div class="alinhar_divs">
                     <div class="img_add">
                         <img src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg" alt="imagem do filme">
                     </div>
@@ -48,49 +51,61 @@
                     </div>
                 </div>
             </section> -->
-        </article>
-        <article>
-            <div class="info-filme esconderModal">
-                <div id="organizar-titulo">
-                    <h2 id="nome-filme">Avatar: Fire and Ash</h2>
-                    <button id="fechar-div"><i class="bi bi-x-lg"></i></button>
-                </div>
-                <div class="container-filme">
-                    <div id="img-filme">
-                        <img id="mudarIMG" src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg" alt="imagem do filme">
-                    </div>
-                    <div class="container-filho">
-                        <div>
-                            <h2>Resumo:</h2>
-                            <strong class="resumo-filme">Jake and Neytiri's family grapples with grief, encountering a new, aggressive Na'vi tribe, the Ash People, who are led by the fiery Varang, as the conflict on Pandora escalates and a new moral focus emerges.</strong>
-                        </div>
-                        <div>
-                            <h2>Elenco:</h2>
-                            <strong id="elenco-filme">Sam Worthington, Zoe Saldaña, Sigourney Weaver</strong>
-                        </div>
-                        <div>
-                            <h2>Gênero:</h2>
-                            <strong id="genero-filme">Action, Adventure, Fantasy</strong>
-                        </div>
-                    </div>
-                </div>
-                <button id="addFilme">Adicionar filme</button>
+      </article>
+      <article>
+        <div class="info_filme esconder_modal">
+          <div id="organizar_titulo">
+            <h2 id="nome_filme">Avatar: Fire and Ash</h2>
+            <button id="fechar_div"><i class="bi bi-x-lg"></i></button>
+          </div>
+          <div class="container_filme">
+            <div id="img_filme">
+              <img
+                id="mudar_img"
+                src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg"
+                alt="imagem do filme"
+              />
             </div>
-        </article>
-    </main>
-    <footer>
-        <div>
-            <a href="#">Politica de privacidade</a>
+            <div class="container_filho">
+              <div>
+                <h2>Resumo:</h2>
+                <strong class="resumo_filme"
+                  >Jake and Neytiri's family grapples with grief, encountering a
+                  new, aggressive Na'vi tribe, the Ash People, who are led by
+                  the fiery Varang, as the conflict on Pandora escalates and a
+                  new moral focus emerges.</strong
+                >
+              </div>
+              <div>
+                <h2>Elenco:</h2>
+                <strong id="elenco_filme"
+                  >Sam Worthington, Zoe Saldaña, Sigourney Weaver</strong
+                >
+              </div>
+              <div>
+                <h2>Gênero:</h2>
+                <strong id="genero_filme">Action, Adventure, Fantasy</strong>
+              </div>
+            </div>
+          </div>
+          <button id="add_filme">Adicionar filme</button>
         </div>
-    </footer>
+      </article>
+    </main>
+    <!-- <footer>
+      <div>
+        <a href="#">Politica de privacidade</a>
+      </div>
+    </footer> -->
     <script
-    src="https://code.jquery.com/jquery-4.0.0.js"
-    integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
-    crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-4.0.0.js"
+      integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U="
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="/scripts/entradas.js"></script>
     <script src="https://unpkg.com/notie"></script>
     <script type="module" src="/scripts/modal.js"></script>
     <script src="/scripts/key.js"></script>
     <script type="module" src="/scripts/listaFilmes.js"></script>
-</body>
+  </body>
 </html>
