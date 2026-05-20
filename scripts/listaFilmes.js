@@ -8,7 +8,7 @@ function criaDivs(data){
         `<section>
             <div class="alinhar_divs">
                 <div class="img_add">
-                    <img src="${data.Poster}" alt="imagem do filme ${data.Title}">
+                    <img src="${data.Poster}" alt="${data.Title}">
                 </div>
                 <div>
                     <button class="remover">Remover<i class="bi-trash"></i></button>
@@ -60,7 +60,7 @@ function existeNaLista(listaFilmes, tituloFilme){
 
 //Realiza verificações finais e adiciona o filme na lista.
 
-$("#add_filme").click(function(){
+$("#add_filme").on("click", function(){
     
     if(existeNaLista(listaFilmes, data.Title)){
         notie.alert({text: "Esse filme já foi adicionado em sua lista.",
@@ -69,6 +69,7 @@ $("#add_filme").click(function(){
         });
     }else{
         addNaLista(listaFilmes);
+        console.log(listaFilmes.keys());
         notie.alert({text: "Filme adicionado em sua lista com sucesso!",
             type: "success",
             time: 1.7,
@@ -76,15 +77,43 @@ $("#add_filme").click(function(){
     }
 });
 
-//inteligencia de remover o filme da lista de filmes
 
-// const btnRemover = document.getElementsByClassName("remover");
+//Inteligencia remover filme da lista de filmes
 
-// console.log(btnRemover[0]);
-// //olhar erro aqui
-// btnRemover[0].addEventListener("click", function(){
-//     const selecionarPai = btnRemover[0].parentElement;
-//     const selecionarAvo = selecionarPai.parentElement;
-//     const selecionarFilme = selecionarAvo.parentElement;
-//     selecionarFilme.remove();
-// });
+function removeFilmeLista(nomeFilme){
+
+    for(let i = 0; i < listaFilmes.length; i++){
+        if(listaFilmes[i].getTitulo() === tituloFilme){
+            listaFilmes[i].pop();
+        }
+    }
+}
+
+function verificacoesParaRemocao(elementoImagem){
+
+    const nomeFilme = $(elementoImagem).children().attr("alt");
+
+    if(existeNaLista(listaFilmes, nomeFilme)){
+        notie.alert({text: "Erro ao excluir o filme.",
+            type: 'error',
+            time: 1.6,
+        });
+    }else{
+        removeFilmeLista(nomeFilme);
+        console.log(listaFilmes.toString());
+        notie.alert({text: "Filme removido com sucesso!",
+            type: 'sucess',
+            time: 1.6,
+        });
+    }
+}
+
+//Inteligencia de remover o elemento da lista de adicionados.
+
+$(document).on("click", ".remover", function(){
+    const elementoRemover = $(this).parent().parent().parent().parent();
+    const imagemElemento = $(this).parent().siblings("div");
+    verificacoesParaRemocao(imagemElemento);
+    elementoRemover.remove();
+});
+

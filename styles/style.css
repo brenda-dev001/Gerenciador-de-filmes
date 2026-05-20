@@ -166,6 +166,7 @@ main{
                         color: var(--primary);
                         background-color: #222469;
                         border: 1px solid var(--primary);
+                        cursor: pointer;
                     }
                 }
             }

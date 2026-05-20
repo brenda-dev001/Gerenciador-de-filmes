@@ -52,4 +52,4 @@ function geradorNome(){
     return URLapi;
 }
 
-$("#botao_buscar").click(buscarDados);
+$("#botao_buscar").on("click", buscarDados);
