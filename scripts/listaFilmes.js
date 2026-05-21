@@ -1,4 +1,5 @@
 import { data } from "./entradas.js";
+import { adicionarLocalStorage, removerLocalStorage } from "./localStorage.js";
 
 //Cria estrutura para a lista de filmes adicionados.
 
@@ -44,6 +45,7 @@ let listaFilmes = [];
 function addNaLista(listaFilmes){
     const objeto = retornaObjeto(data.Title, data.Poster);
     listaFilmes.push(objeto);
+    adicionarLocalStorage(objeto.getTitulo(), objeto);
     criaDivs(data);
     $(".info_filme").addClass("esconder_modal");
 }
@@ -83,6 +85,7 @@ function removeFilmeLista(listaFilmes, nomeFilme){
 
     for(let i = 0; i < listaFilmes.length; i++){
         if(listaFilmes[i].getTitulo() === nomeFilme){
+            removerLocalStorage(listaFilmes[i].getTitulo());
             listaFilmes.slice(i);
         }
     }

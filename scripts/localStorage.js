@@ -1,3 +1,13 @@
-import { AddImg } from "./listaFilmes";
+//armazena Json no LocalStorage
 
-//console.log(AddImg);
+export function adicionarLocalStorage(nomeFilme, objeto){
+
+    localStorage.setItem(nomeFilme, JSON.stringify(objeto));
+
+}
+
+//Remove do LocalStorage pela chave
+
+export function removerLocalStorage(nomeFilme){
+    localStorage.removeItem(nomeFilme);
+}
