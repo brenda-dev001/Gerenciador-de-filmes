@@ -69,7 +69,6 @@ $("#add_filme").on("click", function(){
         });
     }else{
         addNaLista(listaFilmes);
-        console.log(listaFilmes.keys());
         notie.alert({text: "Filme adicionado em sua lista com sucesso!",
             type: "success",
             time: 1.7,
@@ -78,31 +77,32 @@ $("#add_filme").on("click", function(){
 });
 
 
-//Inteligencia remover filme da lista de filmes
+//Inteligencia para remover filme da lista de filmes
 
-function removeFilmeLista(nomeFilme){
+function removeFilmeLista(listaFilmes, nomeFilme){
 
     for(let i = 0; i < listaFilmes.length; i++){
-        if(listaFilmes[i].getTitulo() === tituloFilme){
-            listaFilmes[i].pop();
+        if(listaFilmes[i].getTitulo() === nomeFilme){
+            listaFilmes.slice(i);
         }
     }
 }
 
-function verificacoesParaRemocao(elementoImagem){
+function verificacoesParaRemocao(listaFilmes, elementoImagem){
 
     const nomeFilme = $(elementoImagem).children().attr("alt");
 
     if(existeNaLista(listaFilmes, nomeFilme)){
-        notie.alert({text: "Erro ao excluir o filme.",
-            type: 'error',
+
+        removeFilmeLista(listaFilmes, nomeFilme);
+        notie.alert({text: "Filme removido com sucesso!",
+            type: 'success',
             time: 1.6,
         });
+        
     }else{
-        removeFilmeLista(nomeFilme);
-        console.log(listaFilmes.toString());
-        notie.alert({text: "Filme removido com sucesso!",
-            type: 'sucess',
+        notie.alert({text: "Erro ao excluir o filme.",
+            type: 'error',
             time: 1.6,
         });
     }
@@ -113,7 +113,7 @@ function verificacoesParaRemocao(elementoImagem){
 $(document).on("click", ".remover", function(){
     const elementoRemover = $(this).parent().parent().parent().parent();
     const imagemElemento = $(this).parent().siblings("div");
-    verificacoesParaRemocao(imagemElemento);
+    verificacoesParaRemocao(listaFilmes, imagemElemento);
     elementoRemover.remove();
 });
 
