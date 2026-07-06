@@ -1,0 +1,24 @@
+@media all and (max-width: 1820px){
+    header{
+        & .main_flex{
+            & .title_flex{
+                & div{
+                    & h1{
+                        font-size: 3rem;
+                    }
+                    & .bi-film {
+                        font-size: 3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        & article {
+            & .info_filme {
+                gap: 2rem;
+            }
+    }
+}
+}

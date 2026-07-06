@@ -1,0 +1,12 @@
+@media all and (max-width: 75.63em) {
+
+    main{
+        & article{
+            & .info_filme{
+                gap: 0;
+                width: 65%;
+                padding: 2rem;
+            }
+        }
+    }
+}
