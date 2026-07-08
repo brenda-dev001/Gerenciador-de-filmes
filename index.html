@@ -16,26 +16,26 @@
     <title>Movie List</title>
   </head>
   <body>
-    <header>
-      <div class="main_flex">
-        <div class="title_flex">
+    <header class="cabecalho">
+      <div class="cabecalho__conteudo">
+        <div class="cabecalho__titulo">
           <div><i class="bi bi-film"></i></div>
           <div>
             <h1>my movies</h1>
           </div>
         </div>
-        <nav>
-          <div class="container_flex">
-            <div>
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" />
+        <nav class="navegacao">
+          <div class="navegacao__conteudo">
+            <div class="navegacao__campo">
+              <label class="navegacao__label" for="nome_filme">Nome</label>
+              <input class="navegacao__input" type="text" id="nome_filme" />
             </div>
-            <div>
-              <label for="ano">Ano</label>
-              <input type="text" id="ano" class="input_ano" />
+            <div class="navegacao__campo">
+              <label class="navegacao__label" for="ano">Ano</label>
+              <input type="text" id="ano" class="navegacao__input navegacao__input--ano" />
             </div>
-            <div>
-              <button id="botao_buscar"><i class="bi bi-search"></i></button>
+            <div class="navegacao__campo navegacao__acao">
+              <button class="navegacao__botao" id="botao_buscar"><i class="bi bi-search"></i></button>
             </div>
           </div>
         </nav>
@@ -43,55 +43,55 @@
     </header>
     <main>
       <h2>Start now your list of movies!</h2>
-      <article class="lista_filmes">
+      <article class="lista-filmes">
         <!-- <section>
-                <div class="alinhar_divs">
-                    <div class="img_add">
+                <div class="lista-filmes__item">
+                    <div class="lista-filmes__poster">
                         <img src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg" alt="imagem do filme">
                     </div>
                     <div>
-                        <button class="remover">Remover<i class="bi-trash"></i></button>
+                        <button class="lista-filmes__botao-remover">Remover<i class="bi-trash"></i></button>
                     </div>
                 </div>
             </section> -->
       </article>
       <article>
-        <div class="info_filme"><!--add classse esconder-modal--> 
-          <div id="organizar_titulo">
-            <h2 id="nome_filme">Avatar: Fire and Ash</h2>
-            <button id="fechar_div"><i class="bi bi-x-lg"></i></button>
+        <div class="filme-modal filme-modal--oculto">
+          <div class="filme-modal__cabecalho">
+            <h2 class="filme-modal__titulo" id="titulo_filme">Avatar: Fire and Ash</h2>
+            <button class="filme-modal__fechar" id="fechar_modal"><i class="bi bi-x-lg"></i></button>
           </div>
-          <div class="container_filme">
-            <div id="img_filme">
+          <div class="filme-modal__conteudo">
+            <div class="filme-modal__poster">
               <img
-                id="mudar_img"
+                class="filme-modal__imagem" id="poster_filme"
                 src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg"
                 alt="imagem do filme"
               />
             </div>
-            <div class="container_filho">
+            <div class="filme-modal__detalhes">
               <div>
                 <h2>Resumo:</h2>
-                <strong class="resumo_filme"
+                <strong class="filme-modal__texto" id="resumo_filme"
                   >Jake and Neytiri's family grapples with grief, encountering a
                   new, aggressive Na'vi tribe, the Ash People, who are led by
                   the fiery Varang, as the conflict on Pandora escalates and a
-                  new moral focus emerges.</strong
-                >
+                  new moral focus emerges.
+                </strong>
               </div>
               <div>
                 <h2>Elenco:</h2>
-                <strong id="elenco_filme"
-                  >Sam Worthington, Zoe Saldaña, Sigourney Weaver</strong
-                >
+                <strong class="filme-modal__texto" id="elenco_filme"
+                  >Sam Worthington, Zoe Saldaña, Sigourney Weaver
+                  </strong>
               </div>
               <div>
                 <h2>Gênero:</h2>
-                <strong id="genero_filme">Action, Adventure, Fantasy</strong>
+                <strong class="filme-modal__texto" id="genero_filme">Action, Adventure, Fantasy</strong>
               </div>
             </div>
           </div>
-          <button id="add_filme">Adicionar filme</button>
+          <button class="filme-modal__adicionar" id="add_filme">Adicionar filme</button>
         </div>
       </article>
     </main>

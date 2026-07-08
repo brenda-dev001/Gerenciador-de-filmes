@@ -2,7 +2,7 @@
 
     main{
         & article{
-            & .info_filme{
+            & .filme-modal{
                 gap: 0;
                 width: 65%;
                 padding: 2rem;

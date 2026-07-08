@@ -1,7 +1,7 @@
 @media all and (max-width: 1820px){
-    header{
-        & .main_flex{
-            & .title_flex{
+    .cabecalho{
+        & .cabecalho__conteudo{
+            & .cabecalho__titulo{
                 & div{
                     & h1{
                         font-size: 3rem;
@@ -16,7 +16,7 @@
 
     main {
         & article {
-            & .info_filme {
+            & .filme-modal {
                 gap: 2rem;
             }
     }

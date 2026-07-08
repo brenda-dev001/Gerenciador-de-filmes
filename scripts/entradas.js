@@ -13,10 +13,10 @@ async function buscarDados(){
                 type: 'error',
             });
         }else{
-            $(".info_filme").removeClass("esconder_modal");
+            $(".filme-modal").removeClass("filme-modal--oculto filme-modal--saindo");
         }
         criarModal(data);
-        nome.value = "";
+        nome_filme.value = "";
         ano.value = "";
         
     }catch (error){
@@ -30,22 +30,22 @@ async function buscarDados(){
 //Realiza captura de entradas e formata URL aceita pela API.
 
 function geradorNome(){
-    const nome = $("#nome").val().trim();
+    const nome = $("#nome_filme").val().trim();
     const ano = $("#ano").val().trim();
   
     let  URLapi;
     if(nome === "" || nome === null){
         throw new Error("O nome do filme deve ser informado!");
     }
-    let NovoNome = nome.split(" ").join("+");
+    let nomeFormatado = nome.split(" ").join("+");
     if(ano === "" || ano === null){
-        URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${NovoNome}`;
+        URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${nomeFormatado}`;
     }else{
         if(ano.length !== 4 || isNaN(Number(ano))){
             throw new Error("O ano deve ser números e conter 4 digitos.");
             
         }else{
-            URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${NovoNome}&y=${ano}`;
+            URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${nomeFormatado}&y=${ano}`;
         }
     }
     

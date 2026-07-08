@@ -18,7 +18,7 @@ main{
         
     }
 
-    & .esconder_modal{
+    & .filme-modal--oculto{
         visibility: hidden;
     }
 
@@ -27,12 +27,12 @@ main{
         flex-flow: column;
         align-items: center;
 
-        & .puxar_modal{
+        & .filme-modal--saindo{
             transform: translatey(-100%);
             transition: all 0.10s ease-in 0s;
         }
 
-        & .info_filme
+        & .filme-modal
         {
             width: 50%;
             margin: 1rem auto;
@@ -45,7 +45,7 @@ main{
             position: absolute;
             top: 11rem;
 
-            & #organizar_titulo
+            & .filme-modal__cabecalho
             {
                 display: flex;
                 flex-flow: row nowrap;
@@ -72,13 +72,13 @@ main{
                 }
             }
 
-            & #nome_filme
+            & .filme-modal__titulo
             {
                 text-align: justify;
                 color: var(--primary);
                 text-transform: capitalize;
             }
-            & .container_filme
+            & .filme-modal__conteudo
             {
                 display: flex;
                 flex-flow: row wrap;
@@ -86,7 +86,7 @@ main{
                 height: 50dvh;
                 
                 
-                & #img_filme{
+                & .filme-modal__poster{
                     display: flex;
                     flex: 1 0 10rem; 
                     align-items: center;
@@ -96,14 +96,14 @@ main{
                     border-radius: 9px;
                     
 
-                    & #mudar_img{
+                    & .filme-modal__imagem{
                         width: 100%;
                         height: auto;
                         border-radius: 9px;
                     }
                 }
 
-                & .container_filho{
+                & .filme-modal__detalhes{
                     display: flex;
                     flex-flow: column nowrap;
                     flex: 1 1 30rem;
@@ -125,7 +125,7 @@ main{
                 }
             }
 
-            & #add_filme{
+            & .filme-modal__adicionar{
                 border: none;
                 border-radius: 7px;
                 text-align: center;

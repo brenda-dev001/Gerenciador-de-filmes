@@ -7,17 +7,17 @@ function criaDivs(data){
     
     const elemento = $(
         `<section>
-            <div class="alinhar_divs">
-                <div class="img_add">
+            <div class="lista-filmes__item">
+                <div class="lista-filmes__poster">
                     <img src="${data.Poster}" alt="${data.Title}">
                 </div>
-                <div>
-                    <button class="remover">Remover<i class="bi-trash"></i></button>
+                <div class="lista-filmes__acoes">
+                    <button class="lista-filmes__botao-remover">Remover<i class="bi-trash"></i></button>
                 </div>
             </div>
         </section>`);
 
-    $(".lista_filmes").append(elemento);
+    $(".lista-filmes").append(elemento);
 }
 
 //cria e retorna objeto com informações do filme adicionado.
@@ -47,7 +47,7 @@ function addNaLista(listaFilmes){
     listaFilmes.push(objeto);
     adicionarLocalStorage(objeto.getTitulo(), objeto);
     criaDivs(data);
-    $(".info_filme").addClass("esconder_modal");
+    $(".filme-modal").addClass("filme-modal--oculto");
 }
 
 //Verifica se o filme existe na lista.
@@ -113,7 +113,7 @@ function verificacoesParaRemocao(listaFilmes, elementoImagem){
 
 //Inteligencia de remover o elemento da lista de adicionados.
 
-$(document).on("click", ".remover", function(){
+$(document).on("click", ".lista-filmes__botao-remover", function(){
     const elementoRemover = $(this).parent().parent().parent().parent();
     const imagemElemento = $(this).parent().siblings("div");
     verificacoesParaRemocao(listaFilmes, imagemElemento);

@@ -1,7 +1,7 @@
 # Gerenciador-de-filmes
 
 
-Aplicação desenvolvida para gerenciar uma lista de filmes, permitindo adicionar à lista, visualizar e remover  de forma simples e organizada.
+Aplicação desenvolvida para gerenciar uma lista de filmes, permitindo adicionar à lista, visualizar e lista_filmes__botao  de forma simples e organizada.
 
 
 # 🎬 Gerenciador de Filmes
@@ -19,7 +19,7 @@ Aplicação desenvolvida com HTML, CSS e JavaScript que consome uma API de filme
 ## 🚀 Funcionalidades
 
 
-- Buscar filmes por nome
+- Buscar filmes por navegacao__nome
 - Exibir informações dos filmes
 - Salvar filmes em lista
 - Interface simples e interativa

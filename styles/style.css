@@ -25,7 +25,7 @@ body{
 }
 
 
-header{
+.cabecalho{
     
     background-color: var(--secudary);
     padding: 2rem;
@@ -41,7 +41,7 @@ header{
         display: none;
     }
 
-    & .main_flex
+    & .cabecalho__conteudo
     {
         display: flex;
         flex-flow: row wrap;
@@ -49,7 +49,7 @@ header{
         justify-content: space-between;
         align-items: center;
 
-        & .title_flex 
+        & .cabecalho__titulo 
         {
             display: flex;
             gap: 1rem;
@@ -60,18 +60,18 @@ header{
                 font-size: 2rem;
             }
         }
-        & .container_flex
+        & .navegacao__conteudo
         {
             display: flex;
             flex-flow: row nowrap;
             gap: 2rem;
             align-items: center;
             
-            & div{
-                & label{
+            & .navegacao__campo{
+                & .navegacao__label{
                     margin-right: 0.5rem;
                 }
-                & input{
+                & .navegacao__input{
                     border-radius: 5px;
                     border: none;
                     width: 19rem;
@@ -86,12 +86,12 @@ header{
                         cursor: pointer;
                     }
 
-                    &.input_ano{
+                    &.navegacao__input--ano{
                         width: 6rem;
                     }
                 }
 
-                & button{
+                & .navegacao__botao{
                     width: 3rem;
                     height: 3rem;
                     font-size: 1.5rem;
@@ -116,7 +116,7 @@ header{
 }
 
 main{
-    & .lista_filmes{
+    & .lista-filmes{
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -124,13 +124,13 @@ main{
         gap: 3rem;
         padding: 1rem;
 
-        & .alinhar_divs{
+        & .lista-filmes__item{
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
             gap: 0.5rem;
 
-            & .img_add{
+            & .lista-filmes__poster{
                 height: 30rem;
                 width: 20rem;
                 border-radius: 9px;
@@ -146,10 +146,10 @@ main{
                     filter: brightness(90%) contrast(90%);
                 }
             }
-            & div:last-child{
+            & .lista-filmes__acoes{
                 width: 100%;
                 
-                & button{
+                & .lista-filmes__botao-remover{
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
