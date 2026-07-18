@@ -1,0 +1,24 @@
+@media all and (max-width: 430px){
+
+    main {
+        & article {
+            & .filme-modal {
+                min-width: 77vw;
+            }
+        }
+
+        & .lista-filmes {
+            & .lista-filmes__item {
+                & .lista-filmes__poster {
+                    height: 21rem;
+                    width: 14rem;
+                }
+
+                & .lista-filmes__botao-remover {
+                    height: 3rem;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}

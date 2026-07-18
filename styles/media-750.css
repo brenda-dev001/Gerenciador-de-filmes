@@ -1,0 +1,41 @@
+@media all and (max-width: 750px){
+    
+    .cabecalho {
+        & .cabecalho__conteudo {
+            & .navegacao__conteudo {
+                & .navegacao__campo {
+                    & .navegacao__botao {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        & article {
+            & .filme-modal {
+                & .filme-modal__conteudo {
+                    & .filme-modal__detalhes {
+                        flex: 1 1 25rem;
+                        gap: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        & .lista-filmes {
+            & .lista-filmes__item {
+                & .lista-filmes__poster {
+                    height: 21rem;
+                    width: 14rem;
+                }
+
+                & .lista-filmes__botao-remover {
+                    height: 3rem;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}

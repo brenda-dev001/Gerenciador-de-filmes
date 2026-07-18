@@ -9,10 +9,12 @@
     />
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/modal.css" />
-    <link rel="stylesheet" href="/styles/media-1820.css" media="(max-width: 1820px)" />
-    <link rel="stylesheet" href="/styles/media-1264.css" media="(max-width: 1210px)" />
-    <link rel="stylesheet" href="/styles/media-986.css" media="(max-width: 986px)" />
-    <link rel="stylesheet" href="https://unpkg.com/notie/dist/notie.min.css" />
+    <link rel="stylesheet" href="/styles/media-1300.css" media="(max-width: 1300px)" />
+    <link rel="stylesheet" href="/styles/media-920.css" media="(max-width: 920px)"/>
+    <link rel="stylesheet" href="/styles/media-750.css" media="(max-width: 750px)"/>
+    <link rel="stylesheet" href="/styles/media-560.css" media="(max-width: 560px)">
+    <link rel="stylesheet" href="/styles/media-430.css" media="(max-width: 430px)">
+    <link rel="stylesheet" href="https://unpkg.com/notie/dist/notie.min.css" /> 
     <title>Movie List</title>
   </head>
   <body>
@@ -28,11 +30,11 @@
           <div class="navegacao__conteudo">
             <div class="navegacao__campo">
               <label class="navegacao__label" for="nome_filme">Nome</label>
-              <input class="navegacao__input" type="text" id="nome_filme" />
+              <input class="navegacao__input" type="text" id="nome_filme"/>
             </div>
             <div class="navegacao__campo">
               <label class="navegacao__label" for="ano">Ano</label>
-              <input type="text" id="ano" class="navegacao__input navegacao__input--ano" />
+              <input type="text" id="ano" class="navegacao__input navegacao__input--ano"/>
             </div>
             <div class="navegacao__campo navegacao__acao">
               <button class="navegacao__botao" id="botao_buscar"><i class="bi bi-search"></i></button>
@@ -42,21 +44,21 @@
       </div>
     </header>
     <main>
-      <h2>Start now your list of movies!</h2>
+      <h2>Comece agora sua lista de filmes!</h2>
       <article class="lista-filmes">
-        <!-- <section>
-                <div class="lista-filmes__item">
-                    <div class="lista-filmes__poster">
-                        <img src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg" alt="imagem do filme">
-                    </div>
-                    <div>
-                        <button class="lista-filmes__botao-remover">Remover<i class="bi-trash"></i></button>
-                    </div>
+         <section>
+            <div class="lista-filmes__item">
+                <div class="lista-filmes__poster">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZDYxY2I1OGMtN2Y4MS00ZmU1LTgyNDAtODA0MzAyYjI0N2Y2XkEyXkFqcGc@._V1_SX300.jpg" alt="imagem do filme">
                 </div>
-            </section> -->
+                <div class="lista-filmes__acoes">
+                    <button class="lista-filmes__botao-remover">Remover<i class="bi-trash"></i></button>
+                </div>
+            </div>
+          </section> 
       </article>
       <article>
-        <div class="filme-modal filme-modal--oculto">
+        <div class="filme-modal"> <!--filme-modal--oculto -->
           <div class="filme-modal__cabecalho">
             <h2 class="filme-modal__titulo" id="titulo_filme">Avatar: Fire and Ash</h2>
             <button class="filme-modal__fechar" id="fechar_modal"><i class="bi bi-x-lg"></i></button>
@@ -82,7 +84,7 @@
               <div>
                 <h2>Elenco:</h2>
                 <strong class="filme-modal__texto" id="elenco_filme"
-                  >Sam Worthington, Zoe Saldaña, Sigourney Weaver
+                  >Sam Worthington, Zoe, Sigourney Weaver
                   </strong>
               </div>
               <div>
