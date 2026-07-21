@@ -101,8 +101,8 @@ body{
                     height: 3rem;
                     font-size: 1.5rem;
                     text-align: center;
-                    border: 2px solid var(--primary);
-                    border-radius: 5px;
+                    border: 0.2rem solid var(--primary);
+                    border-radius: 0.5rem;
                     background-color: transparent;
                     color: #abaeff;
                     cursor: pointer;
