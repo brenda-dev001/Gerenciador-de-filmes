@@ -53,3 +53,8 @@ function geradorNome(){
 }
 
 $("#botao_buscar").on("click", buscarDados);
+$("#nome_filme, #ano").on("keydown", (evento)=>{
+    if(evento.code === "Enter"){
+        buscarDados();
+    }
+});

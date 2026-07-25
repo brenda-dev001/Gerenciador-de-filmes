@@ -11,29 +11,37 @@ html{
 }
 
 body{
-    background-color: var(--primary);
+    background-color: var(--fundo);
+    min-height: 100dvh;
     font-family: "Montserrat", sans-serif;
-    color: var(--color-font);
+    color: var(--texto);
     font-size: clamp(1.6rem , 0.25vw + 1.5rem,1.8rem);
 }
 
-:root{
-    --primary: #abaeff;
-    --secudary: #28282d;
-    --color-font: #dcdcde;
+:root {
+    --fundo: #0B1120;
+    --superficie: #111827;
+    --superficie-clara: #1F2937;
+    --texto: #F8FAFC;
+    --texto-secundario: #94A3B8;
+    --destaque: #06B6D4;
+    --destaque-suave: #67E8F9;
+    --destaque-escuro: #155E75;
+    --sucesso: #08938c;
+    --avaliacao: #FACC15;
+    --rodape: #28282d8d;
 }
-
 
 .cabecalho{
     
-    background-color: var(--secudary);
+    background-color: #111827b6;
     padding: 2rem;
 
     & h1  
     {
         text-transform: capitalize;
         font-size: clamp(1.8rem, 1.5rem + 1vw, 3rem);
-        color: var(--primary);
+        color: var(--destaque);
     }
 
     .esconder{
@@ -56,8 +64,8 @@ body{
             align-items: center;
             & .bi-film
             {
-                color: var(--primary);
-                font-size: 2rem;
+                color: var(--destaque);
+                font-size: clamp(1.9rem, 2vw, 2.5rem);
             }
         }
         & .navegacao__conteudo
@@ -65,27 +73,28 @@ body{
             display: flex;
             flex-flow: row nowrap;
             gap: 2rem;
-            align-items: center;
+            align-items: last baseline;
             
             & .navegacao__campo{
                 & .navegacao__label{
                     margin-right: 0.5rem;
                     font-size: clamp(1.7rem, 0.5vw + 1.5rem,1.8rem);
-                    color: var(--primary);
+                    color: var(--destaque);
+                    text-transform: lowercase;
                 }
 
                 & .navegacao__input{
-                    border: none;
-                    border-bottom: 0.1rem solid var(--primary);
-                    outline: none;
-                    transition: border-bottom-color 0.3s ease;
-                    width: 19rem;
-                    height: 2.5rem;
-                    background-color: transparent;
-                    font-size: 1.5rem;
-                    padding: 0.8rem 0;
+                    background-color: #0b1120c3;
                     font-family: 'Montserrat', sans-serif;
-                    color: #abaeff;
+                    font-size: 1.6rem;
+                    color: var(--destaque-suave);
+                    padding: 0.8rem;
+                    width: 19rem;
+                    height: 2.7rem;
+                    border: 0.1rem solid var(--destaque);
+                    border-radius: 1.8rem;
+                    outline: none;
+                    margin-top: 0.5rem;
 
                     &:hover{
                         cursor: pointer;
@@ -97,20 +106,24 @@ body{
                 }
 
                 & .navegacao__botao{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     width: 3rem;
                     height: 3rem;
-                    font-size: 1.5rem;
-                    text-align: center;
-                    border: 0.2rem solid var(--primary);
-                    border-radius: 0.5rem;
-                    background-color: transparent;
-                    color: #abaeff;
+                    font-size: 1.7rem;
+                    border-radius: 100%;
+                    border: 0.2rem solid var(--destaque);
+                    background-color: var(--destaque);
+                    color: var(--fundo);
+                    padding: 1.5rem;
                     cursor: pointer;
-
+                    box-shadow: 0rem 0rem 0.1rem var(--destaque);
+                    transition: color, background-color 0.5s ease-in-out;
+                    
                     &:hover{
-                        color: var(--primary);
-                        background-color: #222469;
-                        border: 1px solid var(--primary);
+                        color: var(--destaque-escuro);
+                        background-color: var(--fundo);
                     }
 
                 }
@@ -139,11 +152,8 @@ main{
                 height: 30rem;
                 width: 20rem;
                 border-radius: 9px;
-                &:hover{
-                    cursor: pointer;
-                    /* transform: scale(1.1); Aumenta o tamanho olhar aqui */
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* olhar depois */
-                }
+                box-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.279);
+
                 & img{
                     border-radius: 9px;
                     width: 100%;
@@ -153,8 +163,6 @@ main{
             }
             & .lista-filmes__acoes{
                 width: 100%;
-                
-                
             }
             & .lista-filmes__botao-remover{
                 display: flex;
@@ -165,16 +173,16 @@ main{
                 height: 4rem;
                 font-size: 1.9rem;
                 text-align: center;
-                border: 2px solid var(--primary);
+                border: 2px solid var(--destaque);
                 border-radius: 5px;
-                background-color: var(--secudary);
-                color: #abaeff;
+                background-color: var(--superficie);
+                color: var(--destaque-suave);
                 cursor: pointer;
 
                 &:hover{
-                    color: var(--primary);
-                    background-color: #222469;
-                    border: 1px solid var(--primary);
+                    color: var(--destaque);
+                    background-color: var(--destaque-escuro);
+                    border: 1px solid var(--destaque);
                 }
             }
         }
@@ -187,14 +195,14 @@ footer{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: #28282d8d;
+    background-color: var(--rodape);
     margin-top: 1.5rem;
     height: 7rem;
     position: relative;
     bottom: 0;
 
     & a{
-        color: var(--primary);
+        color: var(--destaque);
         font-style: italic;
         text-transform: capitalize;
     }
