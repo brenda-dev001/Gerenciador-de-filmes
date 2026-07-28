@@ -1,6 +1,6 @@
-$("#fechar_modal").click(function(){
-    $(".filme-modal").addClass("filme-modal--saindo");
-    $(".filme-modal").addClass("filme-modal--oculto");
+$("#fechar_modal").click(()=>{
+    $(".filme-modal").removeClass("filme-modal--entrando");
+    $(".filme-modal").addClass("filme-modal--saindo filme-modal--oculto");
 });
 
 export function criarModal(data){
@@ -11,7 +11,5 @@ export function criarModal(data){
     $("#genero_filme").text(data.Genre);
   
 }
-
-
 
 

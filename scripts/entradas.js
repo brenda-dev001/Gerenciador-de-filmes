@@ -13,11 +13,10 @@ async function buscarDados(){
                 type: 'error',
             });
         }else{
-            $(".filme-modal").removeClass("filme-modal--oculto filme-modal--saindo");
+            $(".filme-modal").toggleClass("filme-modal--oculto filme-modal--saindo filme-modal--entrando");
         }
         criarModal(data);
-        nome_filme.value = "";
-        ano.value = "";
+        $("#nome_filme, #ano").val("");
         
     }catch (error){
         notie.alert({text: error.message,
@@ -39,13 +38,13 @@ function geradorNome(){
     }
     let nomeFormatado = nome.split(" ").join("+");
     if(ano === "" || ano === null){
-        URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${nomeFormatado}`;
+        URLapi = `https://www.omdbapi.com/?apikey=${APIkey}&t=${nomeFormatado}`;
     }else{
         if(ano.length !== 4 || isNaN(Number(ano))){
             throw new Error("O ano deve ser números e conter 4 digitos.");
             
         }else{
-            URLapi = `http://www.omdbapi.com/?apikey=${APIkey}&t=${nomeFormatado}&y=${ano}`;
+            URLapi = `https://www.omdbapi.com/?apikey=${APIkey}&t=${nomeFormatado}&y=${ano}`;
         }
     }
     
@@ -54,7 +53,7 @@ function geradorNome(){
 
 $("#botao_buscar").on("click", buscarDados);
 $("#nome_filme, #ano").on("keydown", (evento)=>{
-    if(evento.code === "Enter"){
+    if(evento.key === "Enter"){
         buscarDados();
     }
 });

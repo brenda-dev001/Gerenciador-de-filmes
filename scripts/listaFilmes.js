@@ -103,7 +103,8 @@ function removeFilmeLista(listaFilmes, nomeFilme){
     for(let i = 0; i < listaFilmes.length; i++){
         if(listaFilmes[i].getTitulo() === nomeFilme){
             removerLocalStorage(listaFilmes[i].getTitulo());
-            listaFilmes.slice(i);
+            listaFilmes.splice(i, 1);
+            break;
         }
     }
 }
@@ -138,4 +139,3 @@ $(document).on("click", ".lista-filmes__botao-remover", function(){
         $("#main__titulo-principal").removeClass("filme-modal--oculto");
     }
 });
-

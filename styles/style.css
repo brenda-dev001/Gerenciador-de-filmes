@@ -28,8 +28,6 @@ body{
     --destaque-suave: #67E8F9;
     --destaque-escuro: #155E75;
     --sucesso: #08938c;
-    --avaliacao: #FACC15;
-    --rodape: #28282d8d;
 }
 
 .cabecalho{
@@ -119,9 +117,10 @@ body{
                     padding: 1.5rem;
                     cursor: pointer;
                     box-shadow: 0rem 0rem 0.1rem var(--destaque);
-                    transition: color, background-color 0.5s ease-in-out;
+                    transition: transform, color, background-color 0.5s ease-in-out;
                     
                     &:hover{
+                        transform: scale(1.03);
                         color: var(--destaque-escuro);
                         background-color: var(--fundo);
                     }
@@ -178,32 +177,16 @@ main{
                 background-color: var(--superficie);
                 color: var(--destaque-suave);
                 cursor: pointer;
-
+                transition: color 0.5s ease-out, background-color 0.5s ease-out, transform 0.3s ease-in;
+                
                 &:hover{
+                    transform: scale(1.03);
                     color: var(--destaque);
                     background-color: var(--destaque-escuro);
-                    border: 1px solid var(--destaque);
                 }
+
             }
         }
     }
 }
 
-footer{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: var(--rodape);
-    margin-top: 1.5rem;
-    height: 7rem;
-    position: relative;
-    bottom: 0;
-
-    & a{
-        color: var(--destaque);
-        font-style: italic;
-        text-transform: capitalize;
-    }
-}
