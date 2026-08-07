@@ -8,15 +8,15 @@ O projeto foi criado para praticar consumo de API, manipulação do DOM, modular
 
 ### Tela inicial
 
-![Tela inicial do Gerenciador de Filmes](./assets/screenshots/tela-inicial.png)
+![Tela inicial do Gerenciador de Filmes](./src/assets/screenshots/tela-inicial.png)
 
 ### Detalhes do filme
 
-![Modal com os detalhes do filme](./assets/screenshots/detalhes-filme-modal.png)
+![Modal com os detalhes do filme](./src/assets/screenshots/detalhes-filme-modal.png)
 
 ### Lista de filmes
 
-![Lista de filmes adicionados](./assets/screenshots/lista-filmes-adicionados.png)
+![Lista de filmes adicionados](./src/assets/screenshots/lista-filmes-adicionados.png)
 
 ## ✨ Funcionalidades
 
@@ -59,29 +59,31 @@ O projeto foi criado para praticar consumo de API, manipulação do DOM, modular
 
 ```text
 Gerenciador-de-filmes/
-├── assets/
-│   ├── icons/
-│   │   └── film_favicon.svg
-│   └── screenshots/
-│       ├── tela-inicial.png
-│       ├── detalhes-filme-modal.png
-│       └── lista-filmes-adicionados.png
-├── data/
-│   └── arquivo.json
-├── scripts/
-│   ├── entradas.js
-│   ├── key_exemplo.js
-│   ├── listaFilmes.js
-│   ├── localStorage.js
-│   └── modal.js
-├── styles/
-│   ├── media-1300.css
-│   ├── media-920.css
-│   ├── media-750.css
-│   ├── media-560.css
-│   ├── media-430.css
-│   ├── modal.css
-│   └── style.css
+├── src/
+│   ├── assets/
+│   │   ├── icons/
+│   │   │   └── film_favicon.svg
+│   │   └── screenshots/
+│   │       ├── tela-inicial.png
+│   │       ├── detalhes-filme-modal.png
+│   │       └── lista-filmes-adicionados.png
+│   ├── data/
+│   │   └── arquivo.json
+│   ├── scripts/
+│   │   ├── entradas.js
+│   │   ├── key_exemplo.js
+│   │   ├── listaFilmes.js
+│   │   ├── localStorage.js
+│   │   └── modal.js
+│   └── styles/
+│       ├── responsive/
+│       │   ├── media-1300.css
+│       │   ├── media-920.css
+│       │   ├── media-750.css
+│       │   ├── media-560.css
+│       │   └── media-430.css
+│       ├── modal.css
+│       └── style.css
 ├── .gitignore
 ├── index.html
 └── README.md
@@ -91,11 +93,11 @@ Gerenciador-de-filmes/
 
 | Arquivo | Responsabilidade |
 | --- | --- |
-| `entradas.js` | Captura os campos, valida os valores e realiza a consulta à OMDb API. |
-| `modal.js` | Preenche, abre e fecha o modal com os detalhes do filme. |
-| `listaFilmes.js` | Cria a lista visual, adiciona filmes e processa as remoções. |
-| `localStorage.js` | Salva, recupera e remove os filmes do armazenamento do navegador. |
-| `key_exemplo.js` | Modelo de exemplo utilizado para criar o arquivo local que contém a chave da API. |
+| `src/scripts/entradas.js` | Captura os campos, valida os valores e realiza a consulta à OMDb API. |
+| `src/scripts/modal.js` | Preenche, abre e fecha o modal com os detalhes do filme. |
+| `src/scripts/listaFilmes.js` | Cria a lista visual, adiciona filmes e processa as remoções. |
+| `src/scripts/localStorage.js` | Salva, recupera e remove os filmes do armazenamento do navegador. |
+| `src/scripts/key_exemplo.js` | Modelo de exemplo utilizado para criar o arquivo local que contém a chave da API. |
 
 ## ✅ Pré-requisitos
 
@@ -116,7 +118,7 @@ Acesse a página da [OMDb API](https://www.omdbapi.com/apikey.aspx) e solicite s
 
 ### 2. Crie o arquivo local da chave
 
-Dentro da pasta `scripts`, copie o arquivo:
+Dentro da pasta `src/scripts`, copie o arquivo:
 
 ```text
 key_exemplo.js
@@ -133,13 +135,13 @@ Também é possível fazer isso pelo terminal.
 No Windows PowerShell:
 
 ```powershell
-Copy-Item scripts/key_exemplo.js scripts/key.js
+Copy-Item src/scripts/key_exemplo.js src/scripts/key.js
 ```
 
 No Linux ou macOS:
 
 ```bash
-cp scripts/key_exemplo.js scripts/key.js
+cp src/scripts/key_exemplo.js src/scripts/key.js
 ```
 
 ### 3. Adicione sua chave
@@ -147,7 +149,7 @@ cp scripts/key_exemplo.js scripts/key.js
 Abra o arquivo:
 
 ```text
-scripts/key.js
+src/scripts/key.js
 ```
 
 Substitua o valor de exemplo pela sua chave da OMDb API.
@@ -168,7 +170,7 @@ Entre na pasta do projeto:
 cd Gerenciador-de-filmes
 ```
 
-Configure o arquivo `scripts/key.js` seguindo as instruções da seção anterior.
+Configure o arquivo `src/scripts/key.js` seguindo as instruções da seção anterior.
 
 Depois, inicie um servidor local.
 
