@@ -1,0 +1,27 @@
+@media all and (max-width: 1300px) {
+
+    main{
+        & article{
+            & .filme-modal{
+                min-width: 65vw;
+
+
+                & .filme-modal__conteudo {
+                    min-height: 25dvh;
+                    & .filme-modal__poster {
+                        flex: 0 0 15rem;
+                    }
+                }
+            }
+        }
+
+        & .lista-filmes {
+            & .lista-filmes__item {
+                & .lista-filmes__poster {
+                    height: 27rem;
+                    width: 18rem;
+                }
+            }
+        }
+    }
+}

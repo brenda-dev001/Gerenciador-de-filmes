@@ -1,0 +1,11 @@
+@media all and (max-width: 920px){
+    
+    main{
+        & article{
+            & .filme-modal{
+                min-width: 80vw;
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@media all and (max-width: 560px){
+
+   
+
+    main {
+
+        & article {
+            & .filme-modal {
+                min-width: 65vw;
+                margin: 5rem auto;
+
+                & .filme-modal__cabecalho {
+                    flex-flow: column-reverse;
+                    gap: 1rem;
+                    align-items: baseline;
+                  
+                }
+
+                & .filme-modal__conteudo {
+                    & .filme-modal__poster {
+                        flex: 0 0 100%;
+
+                        & .filme-modal__imagem {
+                            width: 35vw;
+                        }
+                    }
+                    & .filme-modal__detalhes{
+                        gap: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        & .lista-filmes {
+            & .lista-filmes__item {
+                & .lista-filmes__poster {
+                    height: 21rem;
+                    width: 14rem;
+                }
+
+                & .lista-filmes__botao-remover {
+                    height: 3rem;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}
