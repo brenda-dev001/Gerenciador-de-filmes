@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--fundo);
+    min-height: 100dvh;
+    font-family: "Montserrat", sans-serif;
+    color: var(--texto);
+    font-size: clamp(1.6rem , 0.25vw + 1.5rem,1.8rem);
+}
+
+:root {
+    --fundo: #0B1120;
+    --superficie: #111827;
+    --superficie-clara: #1F2937;
+    --texto: #F8FAFC;
+    --texto-secundario: #94A3B8;
+    --destaque: #06B6D4;
+    --destaque-suave: #67E8F9;
+    --destaque-escuro: #155E75;
+    --sucesso: #08938c;
+}
+
+.cabecalho{
+    
+    background-color: #111827b6;
+    padding: 2rem;
+
+    & h1  
+    {
+        text-transform: capitalize;
+        font-size: clamp(1.8rem, 1.5rem + 1vw, 3rem);
+        color: var(--destaque);
+    }
+
+    .esconder{
+        display: none;
+    }
+
+    & .cabecalho__conteudo
+    {
+        display: flex;
+        flex-flow: row wrap;
+        column-gap: 5rem;
+        row-gap: 1.5rem;
+        justify-content: space-between;
+        align-items: last baseline;
+
+        & .cabecalho__titulo 
+        {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            & .bi-film
+            {
+                color: var(--destaque);
+                font-size: clamp(1.9rem, 2vw, 2.5rem);
+            }
+        }
+        & .navegacao__conteudo
+        {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 2rem;
+            align-items: last baseline;
+            
+            & .navegacao__campo{
+                & .navegacao__label{
+                    margin-right: 0.5rem;
+                    font-size: clamp(1.7rem, 0.5vw + 1.5rem,1.8rem);
+                    color: var(--destaque);
+                    text-transform: lowercase;
+                }
+
+                & .navegacao__input{
+                    background-color: #0b1120c3;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 1.6rem;
+                    color: var(--destaque-suave);
+                    padding: 0.8rem;
+                    width: 19rem;
+                    height: 2.7rem;
+                    border: 0.1rem solid var(--destaque);
+                    border-radius: 1.8rem;
+                    outline: none;
+                    margin-top: 0.5rem;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+
+                    &.navegacao__input--ano{
+                        width: 7rem;
+                    }
+                }
+
+                & .navegacao__botao{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 3rem;
+                    height: 3rem;
+                    font-size: 1.7rem;
+                    border-radius: 100%;
+                    border: 0.2rem solid var(--destaque);
+                    background-color: var(--destaque);
+                    color: var(--fundo);
+                    padding: 1.5rem;
+                    cursor: pointer;
+                    box-shadow: 0rem 0rem 0.1rem var(--destaque);
+                    transition: transform, color, background-color 0.5s ease-in-out;
+                    
+                    &:hover{
+                        transform: scale(1.03);
+                        color: var(--destaque-escuro);
+                        background-color: var(--fundo);
+                    }
+
+                }
+            }
+        }
+    }
+   
+}
+
+main{
+    & .lista-filmes{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 1rem;
+
+        & .lista-filmes__item{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: 0.5rem;
+
+            & .lista-filmes__poster{
+                height: 30rem;
+                width: 20rem;
+                border-radius: 9px;
+                box-shadow: 0rem 0rem 1.5rem rgba(0, 0, 0, 0.279);
+
+                & img{
+                    border-radius: 9px;
+                    width: 100%;
+                    height: 100%;
+                    filter: brightness(90%) contrast(90%);
+                }
+            }
+            & .lista-filmes__acoes{
+                width: 100%;
+            }
+            & .lista-filmes__botao-remover{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 1rem;
+                height: 4rem;
+                font-size: 1.9rem;
+                text-align: center;
+                border: 2px solid var(--destaque);
+                border-radius: 5px;
+                background-color: var(--superficie);
+                color: var(--destaque-suave);
+                cursor: pointer;
+                transition: color 0.5s ease-out, background-color 0.5s ease-out, transform 0.3s ease-in;
+                
+                &:hover{
+                    transform: scale(1.03);
+                    color: var(--destaque);
+                    background-color: var(--destaque-escuro);
+                }
+
+            }
+        }
+    }
+}
+
