@@ -1,0 +1,155 @@
+main{
+
+    & h2
+    {
+        color: var(--destaque-escuro);
+        text-align: center;
+        margin-top: 2rem;
+        font-size: clamp(2.1rem, 2vw + 1.3rem, 2.5rem);; 
+        
+    }
+
+    & .filme-modal--oculto{
+        visibility: hidden;
+    }
+
+    & article{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        & .filme-modal--saindo{
+            transform: translatey(-100%);
+            transition: all 0.20s ease-out;
+        }
+
+        & .filme-modal--entrando{
+            transform: translateY(1dvh);
+            transition: all 0.20s ease-out;
+        }
+
+        & .filme-modal
+        {
+            width: 50vw;
+            margin: 1rem auto;
+            background-color: var(--superficie);
+            padding: 1.5rem;
+            border-radius: 7px;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+            position: absolute;
+            top: 12rem;
+
+            & .filme-modal__cabecalho
+            {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: space-between;
+
+                & button
+                {
+                    background-color: transparent;
+                    width: 3rem;
+                    height: 3rem;
+                    font-size: 1.5rem;
+                    border: 2px solid var(--destaque);
+                    border-radius: 10px;
+                    color: var(--destaque);
+                    text-align: center;
+                    cursor: pointer;
+                    transition: transform 0.3s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+                    &:hover{
+                        transform: scale(1.03);
+                        color: var(--superficie);
+                        background-color: var(--destaque-escuro);
+                    }
+                }
+            }
+
+            & .filme-modal__titulo
+            {
+                text-align: justify;
+                color: var(--destaque);
+                text-transform: capitalize;
+            }
+            & .filme-modal__conteudo
+            {
+                display: flex;
+                flex-flow: row wrap;
+                gap: 1.5rem;
+                height: auto;
+                min-height: 35dvh;
+                
+                
+                & .filme-modal__poster{
+                    display: flex;
+                    flex: 0 0 20rem; 
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    aspect-ratio: 1/1;
+                    border-radius: 9px;
+                    
+
+                    & .filme-modal__imagem{
+                        width: 100%;
+                        height: auto;
+                        border-radius: 9px;
+                    }
+                }
+
+                & .filme-modal__detalhes{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    flex: 1 1 40rem;
+                    justify-content: space-evenly;
+                    padding: 1rem;
+                    text-align: justify;
+
+                    & h2{
+                        color: var(--destaque);
+                        font-size: clamp(1.7rem, 1.5rem + 1vw ,1.9rem);
+                        display: inline;
+                        font-weight: normal;
+                    }
+
+                    & strong{
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            & .filme-modal__adicionar{
+                margin: 0 auto;
+                border-radius: 7px;
+                text-align: center;
+                background-color: var(--destaque-suave);
+                width: 70%;
+                height: 3rem;
+                font-size: 1.9rem;
+                color: var(--destaque-escuro);
+                text-transform: capitalize;
+                font-weight: 600;
+                border: 1px solid var(--destaque-escuro);
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out, color 0.5s ease-in-out,background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+
+                &:hover{
+                    transform: scale(1.03);
+                    color: var(--destaque-suave);
+                    background-color: var(--destaque-escuro);
+                    border-color: var(--destaque-suave);
+                }
+            }
+        }
+    }
+}
+
+@keyframes animacao_fechar_modal{
+    from {transform: translateY(-100vh);}
+    to {transform: translate(50vh);}
+    
+}
